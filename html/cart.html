@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="images/redWhiteYinYang.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>DesingHub</title>
+</head>
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="body__move"  >
+  
+
+  
+
+  <div class="topnav__main">
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <span class="call__number">Call: <a href="">03073591744</a></span>
+  </div>
+
+<!-- nav -->
+<div class="main__nav">
+  <!-- <svg class="icon__toggler" onclick="Change()">
+    <use href="images/sprite.svg#menu"></use>
+  </svg> -->
+  <i class="fa fa-align-center icon__toggler " style="font-size: 2rem;" onclick="Change()"></i>
+  <ul>
+
+    <li class="product"><a href="">Products<i class="fa fa-solid fa-angle-down" style="color:black"></i></a></li>
+    <div class="product__submenu" onmouseover="display()" onmouseleave="hide()">
+      <a href="iphone.html">clothing line</a>
+      <a href="buttonSlider.html">Deals</a>
+      <a href="#abc">Bags</a>
+      <a href="#abc">Jewellory</a>
+      <a href="#abc">Accessories</a>
+      <a href="#abc">Footwear</a>
+      <a href="#abc">Clearance Sale</a>
+      <a href="#abc">About Us</a>
+
+    </div>
+    <li> <a href="">Customer Reviews</a></li>
+    <li> <a href="">About</a></li>
+  </ul>
+
+
+
+
+  <a href="index.html" class="regular__logo" style="display: block">
+    <div class="regular__logo"><span class="super__letter">A</span>STORE.</div>
+  </a>
+  <div class="icons">
+    <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
+    <i class="fa fa-user icon__item"></i>
+    <i class="fa fa-shopping-cart icon__item" id="cart-button" onclick="toggleCart()"></i>
+
+  </div>
+</div>
+<!-- dopdown for products -->
+<div class="productDropdown">
+  <a href="bags.html">Bags</a>
+  <a href="iphones.html">iphones</a>
+
+</div>
+
+
+
+
+<!-- searchBar -->
+<div class="search__bar">
+  <div class="bar">
+    <input id="input"  type="text" placeholder="Search for Products" data-search>
+    <i class="fa fa-close" style="font-size: 5rem;" onclick="hideSearchBar()" onclick="clearInput()"></i>
+    <div class="products__show"></div>
+  </div>
+
+</div>
+
+<div id="cart" class="cart-hidden">
+  <div class="cart-row">
+    <h2 style="text-align: center;">Your Cart</h2>
+    <i class="fa fa-close icon__item" id="cart-button" onclick="toggleCart()"></i>
+  </div>
+  
+  <ul id="cart-items"></ul>
+  <div id="cart-total">Total: $0</div>
+  <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+</div>
+
+<!-- <div class="cart-product" >
+  
+    <div id="main">
+   <img id="image" src="%src%" alt="">
+   <div id="category">%category%</div>
+   <div id="rating">%rating%</div>
+   <div id="price">%price%</div> 
+ </div>  
+
+
+
+</div>  -->
+<h3 class="header">Full Product Description</h3>
+
+<section id="prodetails" class="section-p1">
+<!-- <div class="single-pro-image">
+    <img src="%mainImage%" width="100%" id="MainImg" alt="">
+    <div class="small-img-group">
+        <div class="small-img-col">
+            <img src="%small1%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
+        </div>
+        <div class="small-img-col">
+          <img src="%small2%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
+      </div>
+      <div class="small-img-col">
+        <img src="%small3%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
+    </div>
+    <div class="small-img-col">
+      <img src="%small4%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
+  </div>
+    </div>
+</div>
+<div class="single-pro-detials">
+  <h6>Home / T-shirts</h6>
+  <h5>%title%</h5>
+  <h2>%price%.00</h2>
+  <select >
+    <option>Select Size</option>
+    <option>XL</option>
+    <option>XXL</option>
+    <option>small</option>
+    <option>large</option>
+  </select>
+  <input type="number" value="1" min="1">
+  <button onclick="addToCart()">Add To Cart</button>
+  <h4>Product Details</h4>
+  <span>%des%</span>
+
+</div> -->
+</section>
+
+  <!-- Featured Products -->
+  <section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="pro-container">
+     
+
+     <div class="pro" onclick="cart(2)">
+      <a href="cart.html">
+      <img src="../images/products/f2.jpg" alt="">
+      <div class="des">
+        <span>adidas</span>
+        <h5>Cartoon Astranaut T-Shirts</h5>
+        <div class="star">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <h4>$17.00</h4>
+      </div>
+      <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
+    </a>
+  </div>
+
+  <div class="pro" onclick="cart(2)">
+    <a href="cart.html">
+    <img src="../images/products/f3.jpg" alt="">
+    <div class="des">
+      <span>adidas</span>
+      <h5>Cartoon Astranaut T-Shirts</h5>
+      <div class="star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h4>$17.00</h4>
+    </div>
+    <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
+  </a>
+</div>
+
+
+<div class="pro" onclick="cart(2)">
+  <a href="cart.html">
+  <img src="../images/products/f4.jpg" alt="">
+  <div class="des">
+    <span>adidas</span>
+    <h5>Cartoon Astranaut T-Shirts</h5>
+    <div class="star">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    </div>
+    <h4>$17.00</h4>
+  </div>
+  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
+</a>
+</div>
+
+
+<div class="pro" onclick="cart(2)">
+  <a href="cart.html">
+  <img src="../images/products/f5.jpg" alt="">
+  <div class="des">
+    <span>adidas</span>
+    <h5>Cartoon Astranaut T-Shirts</h5>
+    <div class="star">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    </div>
+    <h4>$17.00</h4>
+  </div>
+  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
+</a>
+</div>
+
+
+
+<div class="pro" onclick="cart(2)">
+  <a href="cart.html">
+  <img src="../images/products/f6.jpg" alt="">
+  <div class="des">
+    <span>adidas</span>
+    <h5>Cartoon Astranaut T-Shirts</h5>
+    <div class="star">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+    </div>
+    <h4>$17.00</h4>
+  </div>
+  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
+</a>
+</div> 
+    
+
+    </div>
+  </section>
+
+  
+
+  <!-- Footer section -->
+<footer class="section-p1">
+  <div class="col">
+      <img class="logo" src="../images/logo.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong>Village Dighpur near Gidr banglow Ghotki</p>
+      <p><strong>Mobile:</strong>0307 3591744</p>
+      <p><strong>Hours:</strong>10:00 - 18:00, Man - Sat</p>
+      <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+              <i class="fa fa-facebook" ></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-instagram"></i>
+              <i class="fa fa-pinterest"></i>
+              <i class="fa fa-youtube"></i>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="col">
+      <h4>About Us</h4>
+      <a href="#abc">About us</a>
+      <a href="#abc">Delievery Information</a>
+      <a href="#abc">Privacy Policy</a>
+      <a href="#abc">Terms & Conditions</a>
+      <a href="#abc">Contact us</a>
+  </div>
+
+  <div class="col">
+    <h4>My Account</h4>
+    <a href="#abc">Sign In</a>
+    <a href="#abc">View Cart</a>
+    <a href="#abc">My Wishlist</a>
+    <a href="#abc">Track My Order</a>
+    <a href="#abc">Help</a>
+</div>
+<div class="col install">
+    <h4>Install App</h4>
+    <p>From PlayStore or Google Playstore</p>
+    <div class="row">
+      <img src="../images/pay/app.jpg" alt="">
+      <img src="../images/pay/play.jpg" alt="">
+    </div>
+    <p>Secured and Protected. State Bank Authorized</p>
+    <img src="../images/pay/pay.png" alt="">
+</div>
+<div class="copyright">
+  <p>@sajid ali, From Dighpur Ghotki</p>
+</div>
+</footer>
+<script src="../js/cart.js"></script>
+<!-- <script src="script.js"></script> -->
+</body>
+</html>

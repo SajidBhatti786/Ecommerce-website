@@ -1,0 +1,158 @@
+<div class="nav" >
+  <img class="logo__image" src="images/redWhiteYinYang.png" alt="logo">
+
+  
+  <div class="subnav">
+    <button class="subnavbtn " style="float: right">Services <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content clearfix">
+      <a class="hover-underline-animation"  href="#abc">Service1</a>
+      <a class="hover-underline-animation"  href="#abc">Service2</a>
+      <a class="hover-underline-animation"  href="#abc">Service3</a>
+      <a class="hover-underline-animation"  href="#abc">Service4</a>
+    </div>
+  </div>
+
+  <div class="subnav">
+    <button class="subnavbtn">Products <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content clearfix">
+      <a class="hover-underline-animation"  href="#abc">Product1</a>
+      <a class="hover-underline-animation"  href="#abc">Product2</a>
+      <a class="hover-underline-animation"  href="#abc">Product3</a>
+      <a class="hover-underline-animation"  href="#abc">Product4</a>
+    </div>
+  </div>
+
+  <div class="subnav">
+    <button class="subnavbtn clearfix">Support <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a class="hover-underline-animation"  href="#abc">Support1</a>
+      <a class="hover-underline-animation"  href="#abc">Support2</a>
+      <a class="hover-underline-animation"  href="#abc">Support3</a>
+      <a class="hover-underline-animation"  href="#abc">Support4</a>
+    </div>
+  </div>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+css
+
+/* main nav */
+.nav
+{
+     /* width: 100%;
+   
+    width: auto;
+    height: 50px;
+    color: white;
+    box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
+    display: flex;     */
+    display: block;
+    height: 50px;
+    
+    right: 0;
+    top:0;
+   
+    box-shadow: 0 0 1px 1px rgb(29 17 51 / 4%), 0 0 3px 2px rgb(9 32 77 / 12%), 0 0 2px -3px rgb(29 17 51 / 12%);
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+   
+}
+.logo__image
+  {
+    margin-left: 30px;
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 70vw;
+    box-shadow: 0 0 2px 2px rgba(82, 47, 146, 0.04), 0 0 3px 2px rgba(15, 69, 175, 0.12), 0 0 2px -3px rgba(86, 40, 173, 0.12);
+   
+  }
+
+  .web__title{
+    
+    position: absolute;
+    margin-top:0.5rem;
+    margin-left:120px;
+    font-size: 1.3rem;
+  }
+.subnav-content{ display: none;}
+.subnav:hover  .subnav-content{visibility:visible;}
+.subnav .subnavbtn {
+    display: block;
+   float: right;
+    font-size: 16px;
+   
+  margin-top: -100px;
+  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    color: black;
+    font-family: inherit;
+    margin: 0rem;
+   
+   
+ 
+    
+    
+}
+.subnavbtn{
+  float: right;
+  color: black;
+ 
+  margin-top: 0px;
+  padding-top: 0px;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 16px;
+ 
+ 
+  cursor:pointer;
+}
+  .subnav-content {
+    
+    display: flex;
+    align-items: right;
+  justify-content: right;
+    visibility: hidden;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top:95px;
+    margin-left: 50vw;
+    align-self: right;
+
+    
+    background-color: grey;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float: right;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 16px;
+    
+  }
+  .subnav-content a:hover
+  {
+    scale: 1.2;
+
+   
+  }
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: black;
+    color: white;
+  }
