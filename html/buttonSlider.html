@@ -33,7 +33,8 @@
   <i class="fa fa-align-center icon__toggler " style="font-size: 2rem;" onclick="Change()"></i>
   <ul >
 
-    <li class="product"><a href=""  >Products<i class="fa fa-solid fa-angle-down" style="color:black"></i></a></li>
+    <li class="product" style="border: 0px solid red ;"><a href="">Products<i class="fa fa-solid fa-angle-down"
+          style="color:black"></i></a></li>
     <div class="product__submenu" onmouseover="display()" onmouseleave="hide()">
       <a href="iphone.html">clothing line</a>
       <a href="buttonSlider.html">Deals</a>
@@ -43,7 +44,7 @@
       <a href="#abc">Footwear</a>
       <a href="#abc">Clearance Sale</a>
       <a href="#abc">About Us</a>
-      
+    
     </div>
     <li> <a href="">Customer Reviews</a></li>
     <li> <a href="">About</a></li>
@@ -56,9 +57,12 @@
   <div class="icons">
   <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
   <i class="fa fa-user icon__item"></i>
-  <i class="fa fa-shopping-cart icon__item"></i>
+    <i class="fa fa-shopping-cart icon__item" id="cart-button" onclick="toggleCart()"></i>
   
 </div>
+</div>
+<div id="alert" class="alert">
+  <span id="alert-message">Product is added to Cart!</span>
 </div>
 
 <!-- dopdown for products -->
@@ -91,15 +95,27 @@
 </div>
 
 <!-- searchBar -->
-<div class="search__bar">
-  <div class="bar">
-    <input id="input"  type="text" placeholder="Search for Products" data-search>
-    <i class="fa fa-close" style="font-size: 5rem;" onclick="hideSearchBar()" onclick="clearInput()"></i>
-    <div class="products__show"></div>
+<section id="search-area">
+  <div class="search-row">
+    <input type="text" class="search-input">
+    <button class="search-button">Search</button>
+    <button class="search-button" style="margin-top: 2px" onclick="hideSearchBar()">Close</button>
+
+  </div>
+  <div class="search-results"></div>
+</section>
+
+<div id="cart" class="cart-hidden">
+  <div class="cart-row">
+    <h2 style="text-align: center;">Your Cart</h2>
+    <i class="fa fa-close icon__item" id="cart-button" onclick="toggleCart()"></i>
   </div>
 
+  <ul id="cart-items"></ul>
+  <h3 style="margin: auto; padding: 10px 0px " id="cart-total">Total: $0</h3>
+  <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
 </div>
- <div class="products">
+ <!-- <div class="products"> -->
   
    <!-- <div id="main">
     <img id="image" src="%src%" alt="">
@@ -108,7 +124,12 @@
     <div id="price">%price%</div>
   </div>  -->
   <div id="loading">Loading...</div>
-  <div id="content"></div>
+  <div class="products-container" id="content">
+  
+  
+    <!-- Add more product elements here -->
+  
+  </div>
   <div id="error"></div>
 
 

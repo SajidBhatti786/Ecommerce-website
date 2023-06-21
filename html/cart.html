@@ -32,7 +32,8 @@
   <i class="fa fa-align-center icon__toggler " style="font-size: 2rem;" onclick="Change()"></i>
   <ul>
 
-    <li class="product"><a href="">Products<i class="fa fa-solid fa-angle-down" style="color:black"></i></a></li>
+    <li class="product" style="border: 0px solid red ;"><a href="">Products<i class="fa fa-solid fa-angle-down"
+          style="color:black"></i></a></li>
     <div class="product__submenu" onmouseover="display()" onmouseleave="hide()">
       <a href="iphone.html">clothing line</a>
       <a href="buttonSlider.html">Deals</a>
@@ -42,7 +43,7 @@
       <a href="#abc">Footwear</a>
       <a href="#abc">Clearance Sale</a>
       <a href="#abc">About Us</a>
-
+    
     </div>
     <li> <a href="">Customer Reviews</a></li>
     <li> <a href="">About</a></li>
@@ -55,7 +56,7 @@
     <div class="regular__logo"><span class="super__letter">A</span>STORE.</div>
   </a>
   <div class="icons">
-    <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
+  <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
     <i class="fa fa-user icon__item"></i>
     <i class="fa fa-shopping-cart icon__item" id="cart-button" onclick="toggleCart()"></i>
 
@@ -72,14 +73,15 @@
 
 
 <!-- searchBar -->
-<div class="search__bar">
-  <div class="bar">
-    <input id="input"  type="text" placeholder="Search for Products" data-search>
-    <i class="fa fa-close" style="font-size: 5rem;" onclick="hideSearchBar()" onclick="clearInput()"></i>
-    <div class="products__show"></div>
-  </div>
+<section id="search-area">
+  <div class="search-row">
+    <input type="text" class="search-input">
+    <button class="search-button">Search</button>
+    <button class="search-button" style="margin-top: 2px" onclick="hideSearchBar()">Close</button>
 
-</div>
+  </div>
+  <div class="search-results"></div>
+</section>
 
 <div id="cart" class="cart-hidden">
   <div class="cart-row">
@@ -88,9 +90,12 @@
   </div>
   
   <ul id="cart-items"></ul>
-  <div id="cart-total">Total: $0</div>
+  <h3 style="margin: auto; padding: 10px 0px " id="cart-total">Total: $0</h3>
   <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
 </div>
+
+
+<!-- Rest of your HTML code -->
 
 <!-- <div class="cart-product" >
   
@@ -107,152 +112,42 @@
 <h3 class="header">Full Product Description</h3>
 
 <section id="prodetails" class="section-p1">
-<!-- <div class="single-pro-image">
-    <img src="%mainImage%" width="100%" id="MainImg" alt="">
-    <div class="small-img-group">
-        <div class="small-img-col">
-            <img src="%small1%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
-        </div>
-        <div class="small-img-col">
-          <img src="%small2%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
-      </div>
-      <div class="small-img-col">
-        <img src="%small3%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
+  <!-- <div class="img-section">
+    <img src="../images/products/f1.jpg" alt="">
+    <div class="small-images">
+      <img src="../images/products/f2.jpg" alt="">
+      <img src="../images/products/f3.jpg" alt="">
+      <img src="../images/products/f4.jpg" alt="">
+      <img src="../images/products/f5.jpg" alt="">
     </div>
-    <div class="small-img-col">
-      <img src="%small4%" alt="" width="100%" class="small-img" onclick="changeImage(this)">
   </div>
+  <div class="description">
+    <h6>%brand%</h6>
+    <h5>%title%</h5>
+    <h3>%price%.00</h3>
+    <div class="select-group">
+      <select>
+        <option>Select Size</option>
+        <option>XL</option>
+        <option>XXL</option>
+        <option>Small</option>
+        <option>Large</option>
+      </select>
+      <input type="number" value="1" min="1">
     </div>
-</div>
-<div class="single-pro-detials">
-  <h6>Home / T-shirts</h6>
-  <h5>%title%</h5>
-  <h2>%price%.00</h2>
-  <select >
-    <option>Select Size</option>
-    <option>XL</option>
-    <option>XXL</option>
-    <option>small</option>
-    <option>large</option>
-  </select>
-  <input type="number" value="1" min="1">
-  <button onclick="addToCart()">Add To Cart</button>
-  <h4>Product Details</h4>
-  <span>%des%</span>
-
-</div> -->
+    <button onclick="addToCart()">Add To Cart</button>
+    <h2>Product Details</h2>
+      <div class="rating">
+      <span>Rating: %rating% </span>
+      <span>Reviews: %reviews%</span>
+      </div>
+    <span>%des%</span>
+  </div> -->
 </section>
 
+
   <!-- Featured Products -->
-  <section id="product1" class="section-p1">
-    <h2>Featured Products</h2>
-    <p>Summer Collection New Modern Design</p>
-    <div class="pro-container">
-     
-
-     <div class="pro" onclick="cart(2)">
-      <a href="cart.html">
-      <img src="../images/products/f2.jpg" alt="">
-      <div class="des">
-        <span>adidas</span>
-        <h5>Cartoon Astranaut T-Shirts</h5>
-        <div class="star">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <h4>$17.00</h4>
-      </div>
-      <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
-    </a>
-  </div>
-
-  <div class="pro" onclick="cart(2)">
-    <a href="cart.html">
-    <img src="../images/products/f3.jpg" alt="">
-    <div class="des">
-      <span>adidas</span>
-      <h5>Cartoon Astranaut T-Shirts</h5>
-      <div class="star">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h4>$17.00</h4>
-    </div>
-    <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
-  </a>
-</div>
-
-
-<div class="pro" onclick="cart(2)">
-  <a href="cart.html">
-  <img src="../images/products/f4.jpg" alt="">
-  <div class="des">
-    <span>adidas</span>
-    <h5>Cartoon Astranaut T-Shirts</h5>
-    <div class="star">
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-    </div>
-    <h4>$17.00</h4>
-  </div>
-  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
-</a>
-</div>
-
-
-<div class="pro" onclick="cart(2)">
-  <a href="cart.html">
-  <img src="../images/products/f5.jpg" alt="">
-  <div class="des">
-    <span>adidas</span>
-    <h5>Cartoon Astranaut T-Shirts</h5>
-    <div class="star">
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-    </div>
-    <h4>$17.00</h4>
-  </div>
-  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
-</a>
-</div>
-
-
-
-<div class="pro" onclick="cart(2)">
-  <a href="cart.html">
-  <img src="../images/products/f6.jpg" alt="">
-  <div class="des">
-    <span>adidas</span>
-    <h5>Cartoon Astranaut T-Shirts</h5>
-    <div class="star">
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-      <i class="fa fa-star"></i>
-    </div>
-    <h4>$17.00</h4>
-  </div>
-  <a href="#"><i class="fa fa-shopping-cart cart" style="font-size: 1.2rem;"></i></a>
-</a>
-</div> 
-    
-
-    </div>
-  </section>
-
+  
   
 
   <!-- Footer section -->
