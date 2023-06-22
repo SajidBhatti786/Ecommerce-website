@@ -29,7 +29,7 @@ function showProductData() {
       console.log("product" + product.title)
       if (1  )
           {
-              var html = `<div class="product" >
+              var html = `<div class="product" data-aos="zoom-out" data-aos-duration="2000">
       <img src="%src%" alt="Product 1" onclick="redirectToProductDetails(%productId%)">
       <div class="product-info">
         <h3 class="product-brand" onclick="redirectToProductDetails(%productId1%)">%category%</h3>
@@ -254,6 +254,10 @@ function saveCartItems() {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+/* Searchbar */
+
+
+
 const searchArea = document.getElementById("search-area");
 const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
@@ -264,7 +268,9 @@ searchButton.addEventListener("click", function() {
   searchProducts(query);
 });
 
-function searchProducts(query) {
+function searchProducts(query) 
+{
+flag = false;
   fetch("https://dummyjson.com/products/search?q=" + query)
     .then(response => response.json())
     .then(data => {
@@ -276,7 +282,7 @@ function searchProducts(query) {
         Object.values(data).forEach(product1 => {
           Object.values(product1).forEach(product => { 
             console.log("p:"+product)
-          var html = `<div class="product" onclick="redirectToProductDetails(%productId%)">
+          var html = `<div class="product" onclick="redirectToProductDetails(%productId%)" data-aos="fade-up" data-aos-duration="1500">
       <img src="%src%" alt="Product 1">
       <div class="product-info">
         <h3 class="product-brand">%category%</h3>
@@ -301,12 +307,13 @@ function searchProducts(query) {
         newHtml = newHtml.replace('%newPrice%', product.price - (product.price * product.discountPercentage / 100));
           newHtml = newHtml.replace('%description%', product.description);
             searchResults.insertAdjacentHTML('beforeend', newHtml);
-          
+            flags = true;
           })
         });
-      } else {
-        searchArea.style.height = ""; // Reset the height
-        searchResults.innerHTML = "<p>No results found.</p>";
+      } 
+      if (flag) {
+        console.log("in if");
+            searchResults.insertAdjacentHTML('beforeend', "<p>No results found.</p>");
       }
     })
     .catch(error => {
@@ -461,3 +468,16 @@ function displayNextAlert() {
   }
 }
 
+function Change(){
+    
+
+    console.log("clicked");
+    
+    document.querySelector('.mobile__nav').classList.add('show__nav');
+    document.querySelector('.body__move').classList.add('abc');
+}
+  function Change1(){
+    
+    document.querySelector('.mobile__nav').classList.remove('show__nav');
+    document.querySelector('.body__move').classList.remove('abc');
+  }

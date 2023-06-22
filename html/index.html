@@ -9,6 +9,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <link rel="icon" href="images/redWhiteYinYang.png" />
     <link
       rel="stylesheet"
@@ -19,7 +22,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>DesingHub</title>
+    <link type="image/png" sizes="32x32" rel="icon" href="../images/icons8-galaxy-store-32.png">
+  <title>Astore - Your Ultimate eCommerce Store</title>
   </head>
   <body
     data-aos-easing="ease"
@@ -31,6 +35,9 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+  <script>
+    AOS.init();
+  </script>
 
     <div class="topnav__main">
       <a href="#" class="fa fa-facebook"></a>
@@ -42,53 +49,41 @@
     <!-- nav -->
     <div class="main__nav">
       <!-- <svg class="icon__toggler" onclick="Change()">
-    <use href="images/sprite.svg#menu"></use>
-  </svg> -->
-      <i
-        class="fa fa-align-center icon__toggler"
-        style="font-size: 2rem; color: black !important"
-        onclick="Change()"
-      ></i>
-
-      <ul style="border: 0px solid black ;">
-        <li class="product" style="border: 0px solid red ;">
-          <a href="" style="border: 0px solid black ;"
-            >Products<i style="border: 0px solid black ;"
-              class="fa fa-solid fa-angle-down"
-              style="color: black"
-            ></i
-          ></a>
-        </li>
-        <div
-          class="product__submenu"
-          onmouseover="display()"
-          onmouseleave="hide()"
-        >
-          <a href="iphone.html">clothing line</a>
-          <a href="buttonSlider.html">Deals</a>
-          <a href="#abc">Bags</a>
-          <a href="#abc">Jewellory</a>
-          <a href="#abc">Accessories</a>
-          <a href="#abc">Footwear</a>
-          <a href="#abc">Clearance Sale</a>
-          <a href="#abc">About Us</a>
+        <use href="images/sprite.svg#menu"></use>
+      </svg> -->
+      <i class="fa fa-align-center icon__toggler " style="font-size: 2rem;" onclick="Change()"></i>
+      <ul>
+    
+        <li class="product" style="border: 0px solid red ;"><a href="">Products<i class="fa fa-solid fa-angle-down"
+              style="color:black"></i></a></li>
+        <div class="product__submenu" onmouseover="display()" onmouseleave="hide()">
+          <a href="#" onclick="getValue('cloth')">clothing line</a>
+          <a href="#" onclick="getValue('decoration')" >Decoration</a>
+          <a href="#abc" onclick="getValue('bags')">Bags</a>
+          <a href="#abc" onclick="getValue('Jewellery')">Jewellory</a>
+          <a href="#abc" onclick="getValue('skincare')">skincare</a>
+          <a href="#abc" onclick="getValue('shoes')">Footwear</a>
+          <a href="#abc" onclick="getValue('Perfume')">Perfume</a>
+          <a href="#abc" onclick="getValue('lighting')">lighting</a>
+    
         </div>
-        <li><a href="">Customer Reviews</a></li>
-        <li><a href="">About</a></li>
+        <li> <a href="">Customer Reviews</a></li>
+        <li> <a href="">About</a></li>
       </ul>
-
-      <a href="index.html" class="regular__logo" style="display: block"
-        ><div class="regular__logo">
-          <span class="super__letter">A</span>STORE.
-        </div></a
-      >
+    
+    
+    
+    
+      <a href="index.html" class="regular__logo" style="display: block">
+        <div class="regular__logo"><span class="super__letter">A</span>STORE.</div>
+      </a>
       <div class="icons">
         <i class="fa fa-search icon__item" onclick="showSearchBar()"></i>
         <i class="fa fa-user icon__item"></i>
-    <i class="fa fa-shopping-cart icon__item" id="cart-button" onclick="toggleCart()"></i>
+        <i class="fa fa-shopping-cart icon__item" id="cart-button" onclick="toggleCart()"></i>
+    
       </div>
     </div>
-
     <!-- dopdown for products -->
     <div class="productDropdown">
       <a href="bags.html">Bags</a>
@@ -129,17 +124,17 @@
 *******************Main Page content********** 
 *************************************************-->
 
-    <section class="hero-image">
+    <section class="hero-image" data-aos="fade-up" data-aos-duration="1500">
       <img src="../images/homepage/hero-image.webp" alt="" />
     </section>
     <div id="includedContent"></div>
-    <section class="show-categories">
-      <div class="cat" class="cat" onclick="getValue('sunglasses')">
+    <section class="show-categories" data-aos="zoom-out" data-aos-duration="2000">
+      <div class="cat" class="cat" onclick="getValue('decoration')" >
         <a href="buttonSlider.html">
           <img src="../images/homepage/sale.webp" alt="" class="cat-image" />
         </a>
       </div>
-      <div class="cat" onclick="getValue('Shoes')">
+      <div class="cat" onclick="getValue('Shoes')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img
             src="../images/homepage/footwear.webp"
@@ -148,17 +143,17 @@
           />
         </a>
       </div>
-      <div class="cat" class="cat" onclick="getValue('sunglasses')">
+      <div class="cat" class="cat" onclick="getValue('sunglasses')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img src="../images/homepage/glasses.webp" alt="" class="cat-image" />
         </a>
       </div>
-      <div class="cat" onclick="getValue('tops')">
+      <div class="cat" onclick="getValue('tops')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img src="../images/homepage/gloves.webp" alt="" class="cat-image" />
         </a>
       </div>
-      <div class="cat" onclick="getValue('womens-bags')">
+      <div class="cat" onclick="getValue('womens-bags')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img
             src="../images/homepage/handbags.webp"
@@ -167,7 +162,7 @@
           />
         </a>
       </div>
-      <div class="cat" onclick="getValue('Jewellery')">
+      <div class="cat" onclick="getValue('Jewellery')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img
             src="../images/homepage/jewellory.webp"
@@ -177,18 +172,18 @@
         </a>
       </div>
 
-      <div class="cat" onclick="getValue('Perfumes')">
+      <div class="cat" onclick="getValue('Perfumes')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img href="#abc" src="../images/homepage/perfumes.webp" alt="" />
         </a>
       </div>
 
-      <div class="cat" onclick="getValue('Laptop')">
+      <div class="cat" onclick="getValue('skincare')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img src="../images/homepage/premium.webp" alt="" class="cat-image" />
         </a>
       </div>
-      <div class="cat" onclick="getValue('Shirts')">
+      <div class="cat" onclick="getValue('Shirts')" data-aos="zoom-out" data-aos-duration="2000">
         <a href="buttonSlider.html">
           <img src="../images/homepage/cloths.webp" alt="" class="cat-image" />
         </a>

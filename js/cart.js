@@ -18,15 +18,15 @@ let html = `<div class="img-section">
       <img src="%small4%" alt="" onclick="changeImage(this)">
     </div>
   </div>
-  <div class="description">
-    <h6>%brand%</h6>
-    <h5>%title%</h5>
-    <div class="price">
-      <h3 class="old-price">$%price%.00</h3>
-      <h3>$%newPrice%</h3>
+  <div class="description" >
+    <h6 data-aos="fade-up" data-aos-duration="1500">%brand%</h6>
+    <h5 data-aos="fade-up" data-aos-duration="1500">%title%</h5>
+    <div class="price" data-aos="zoom-out" data-aos-duration="1500">
+      <h3 class="old-price" data-aos="fade-up" data-aos-duration="1500" >$%price%.00</h3>
+      <h3 data-aos="fade-up" data-aos-duration="1500">$%newPrice%</h3>
     </div>
 
-    <div class="select-group">
+    <div class="select-group" data-aos="fade-up" data-aos-duration="1500">
       <select>
         <option>Select Size</option>
         <option>XL</option>
@@ -34,15 +34,15 @@ let html = `<div class="img-section">
         <option>Small</option>
         <option>Large</option>
       </select>
-      <input type="number" value="1" min="1">
+      <input type="number" value="1" min="1" data-aos="fade-up" data-aos-duration="1500">
     </div>
-    <button onclick="addToCart()">Add To Cart</button>
-    <h2>Product Details</h2>
-      <div class="rating">
-      <span>Rating: %rating% </span>
-      <span>Reviews: %reviews%</span>
+    <button onclick="addToCart(%pd%)" data-aos="fade-up" data-aos-duration="1500">Add To Cart</button>
+    <h2 data-aos="fade-up" data-aos-duration="1500">Product Details</h2>
+      <div class="rating" data-aos-duration="1500">
+      <span data-aos="fade-up" data-aos-duration="1500">Rating: %rating% </span>
+      
       </div>
-    <span>%des%</span>
+    <span data-aos="fade-up" data-aos-duration="1500">%des%</span>
   </div> `
   fetch('https://dummyjson.com/products/' + productId)
     .then(res => res.json())
@@ -61,7 +61,8 @@ let html = `<div class="img-section">
       newHTML = newHTML.replace('%price%', data.price);
     newHTML = newHTML.replace('%des%', data.description);
     newHTML = newHTML.replace('%productId%', data.id);
-    newHTML = newHTML.replace('%data.id%', data.id);
+     newHTML = newHTML.replace('%data.id%', data.id);
+      newHTML = newHTML.replace('%pd%', data.id);
       document.getElementById('prodetails').insertAdjacentHTML('beforeend', newHTML);
 
     })
@@ -119,7 +120,8 @@ function clearCart() {
 }
 
 function addToCart(data) {
- 
+   showAlert("Added to cart successfully!");
+
  
  cartItems.push(data);
  
@@ -193,6 +195,38 @@ function removeFromCart(index) {
 function saveCartItems() {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
+var alertQueue = []; // Queue to store the alert messages
+
+function showAlert(message) {
+  alertQueue.push(message); // Add the message to the queue
+
+  if (!document.getElementById("alert").classList.contains("show")) {
+    displayNextAlert();
+  }
+}
+
+function displayNextAlert() {
+  var alertElement = document.getElementById("alert");
+  var alertMessage = document.getElementById("alert-message");
+
+  if (alertQueue.length > 0) {
+    var message = alertQueue.shift(); // Get the next message from the queue
+
+    alertMessage.textContent = message;
+    alertElement.classList.add("show");
+
+    setTimeout(function() {
+      alertElement.classList.remove("show");
+      alertElement.classList.add("hide");
+
+      setTimeout(function() {
+        alertElement.classList.remove("hide");
+        displayNextAlert(); // Display the next alert in the queue
+      }, 300); // Delay before showing the next alert
+    }, 3000); // Time for each alert to be displayed
+  }
+}
+
 /* Searchbar */
 
 
@@ -207,7 +241,9 @@ searchButton.addEventListener("click", function() {
   searchProducts(query);
 });
 
-function searchProducts(query) {
+function searchProducts(query) 
+{
+flag = false;
   fetch("https://dummyjson.com/products/search?q=" + query)
     .then(response => response.json())
     .then(data => {
@@ -219,13 +255,13 @@ function searchProducts(query) {
         Object.values(data).forEach(product1 => {
           Object.values(product1).forEach(product => { 
             console.log("p:"+product)
-          var html = `<div class="product" onclick="redirectToProductDetails(%productId%)">
+          var html = `<div class="product" onclick="redirectToProductDetails(%productId%)" data-aos="fade-up" data-aos-duration="1500">
       <img src="%src%" alt="Product 1">
       <div class="product-info">
         <h3 class="product-brand">%category%</h3>
         <h2 class="product-name">%title%</h2>
         <p class="product-description">%description%</p>
-        <div class="product-price">
+        <div class="product-price" >
           <span class="discount-percentage">%discount%% OFF</span>
           <span class="price-old">$%price%</span>
           <span class="price-new">$%newPrice%</span>
@@ -244,12 +280,13 @@ function searchProducts(query) {
         newHtml = newHtml.replace('%newPrice%', product.price - (product.price * product.discountPercentage / 100));
           newHtml = newHtml.replace('%description%', product.description);
             searchResults.insertAdjacentHTML('beforeend', newHtml);
-          
+            flags = true;
           })
         });
-      } else {
-        searchArea.style.height = ""; // Reset the height
-        searchResults.innerHTML = "<p>No results found.</p>";
+      } 
+      if (flag) {
+        console.log("in if");
+            searchResults.insertAdjacentHTML('beforeend', "<p>No results found.</p>");
       }
     })
     .catch(error => {
@@ -269,3 +306,17 @@ function showSearchBar() {
   const searchArea = document.getElementById("search-area");
   searchArea.style.display = "block";
 }
+function Change(){  //show menu toggler for mobile
+    
+
+    console.log("clicked");
+    
+    document.querySelector('.mobile__nav').classList.add('show__nav');
+    document.querySelector('.body__move').classList.add('abc');
+}
+  function Change1(){  //hide menu toggler for mobile
+    
+    document.querySelector('.mobile__nav').classList.remove('show__nav');
+    document.querySelector('.body__move').classList.remove('abc');
+}
+  

@@ -136,7 +136,7 @@ body {
   color: black;
   transition: 1s;
 
-  z-index: 9999;
+  z-index: 99999999999999;
 }
 .show__nav {
   left: 0px !important;
@@ -237,7 +237,7 @@ body {
 
   margin-top: -3px;
   margin-left: -25px;
-  z-index: 99999999999999999;
+  z-index: 9999;
 }
 .product__submenu > a:first-child {
   margin-top: 20px;
@@ -693,8 +693,10 @@ body {
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin: 0px;
       padding: 0px;
+  }
+  .description{
+    width: 100%;
   }
   .description p, .description h1, .description h2, .description h3, .description h4, .description h5, .description h6,.description span{
     font-size: 1rem;
@@ -950,7 +952,22 @@ footer .copyright {
   display: block;
   transform: translateX(0%);
 }
+#clear-cart {
+  
+  margin: 0;
+  padding: 5px;
+  background-color: #f79831;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+#clear-cart:hover {
+  background-color: #f56a00;
+}
 .cart-hidden {
   display: none;
   transform: translateX(100%);
@@ -968,11 +985,22 @@ footer .copyright {
     margin: 0;
     padding: 0;
   }
-  #clear-cart{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-  }
+    #clear-cart {
+      width: 100%;
+      margin: 0;
+      padding: 5px;
+      background-color: #f79831;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    #clear-cart:hover {
+      background-color: #f56a00;
+    }
   #cart.cart-visible {
     transform: translateX(0%);
   }
@@ -1106,6 +1134,7 @@ footer .copyright {
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  z-index: 99999999999999999999;
 }
 
 .search-row {
@@ -1198,4 +1227,9 @@ footer .copyright {
   opacity: 0;
   visibility: hidden;
   transition-delay: 0.3s;
+}
+.aos-element {
+  z-index: -99999999999999999;
+  transform: translateZ(-999);
+  position: absolute !important;
 }
