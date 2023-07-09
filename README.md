@@ -29,8 +29,8 @@ https://sajidbhatti786.github.io/Ecommerce-website/html/index.html
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
-2. Open the project directory: `cd your-repo`
+1. Clone the repository: `git clone https://github.com/SajidBhatti786/Ecommerce-website.git`
+2. Open the project directory: `cd Ecommerce-website`
 3. Open the `index.html` file in your preferred web browser.
 
 ## Usage
@@ -41,8 +41,7 @@ https://sajidbhatti786.github.io/Ecommerce-website/html/index.html
    
 ## Contributing
 
-If you would like to contribute to this project, please follow the guidelines outlined in [CONTRIBUTING.md](link-to-contributing-file).
-
+If you want to contribute or colloborate or want to seek any services, guidence or help connect me through any channel.
 ## Connect with me
 [![Facebook](https://img.shields.io/badge/Facebook-Follow-blue)](https://www.facebook.com/profile.php?id=100026991042689&mibextid=ZbWKwL)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sajid-bhatti-b2436b24a)
