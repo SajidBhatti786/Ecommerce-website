@@ -1184,6 +1184,8 @@ footer .copyright {
   }
   #search-area {
     top: 100%;
+    height: 100vh;
+    margin-top: 20vh;
   }
 }
 .close-button {
