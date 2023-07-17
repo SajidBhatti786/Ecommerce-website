@@ -539,9 +539,10 @@ body {
   display: flex;
   flex-direction: row;
   height: 70vh;
-  width: 100%;
+  width: 100vw;
   margin-bottom: 20px;
   justify-content: center;
+  overflow-x: hidden;
 }
 .img-section > img {
   width: 100%;
@@ -1034,14 +1035,13 @@ footer .copyright {
 
 /* Example styles for the cart container */
 #cart {
-  /* Your existing styles for the cart container */
+  /*  existing styles for the cart container */
 }
 
 #cart-items {
-  /* Your existing styles for the cart items list */
+  /*  existing styles for the cart items list */
 }
 
-/* Styles for Search Icon */
 /* Styles for Search Icon */
 #search-icon {
   padding: 5px;
