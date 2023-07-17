@@ -1,7 +1,6 @@
-/* *
-{
+* {
   box-sizing: border-box;
-} */
+}
 
 body {
   position: relative;
@@ -26,6 +25,7 @@ body {
   color: white;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 .fa {
   color: white;
@@ -332,7 +332,6 @@ body {
   transform: scaleX(1);
 }
 
-
 /* Product Block */
 .products,
 .iphone,
@@ -536,7 +535,7 @@ body {
 ************************************************* */
 
 /* single product description  */
-#prodetails{
+#prodetails {
   display: flex;
   flex-direction: row;
   height: 70vh;
@@ -544,28 +543,27 @@ body {
   margin-bottom: 20px;
   justify-content: center;
 }
-.img-section > img{
+.img-section > img {
   width: 100%;
   height: 90%;
   object-fit: cover;
 }
-.rating span{
+.rating span {
   color: #088178;
   font-size: 1rem;
-
 }
-.small-images{
+.small-images {
   display: flex;
   flex-direction: row;
   height: 20%;
   width: 100%;
 }
-.small-images img{
+.small-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.description{
+.description {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -573,49 +571,49 @@ body {
   margin-left: 2%;
   margin-right: 2%;
 }
-.description h2{
+.description h2 {
   font-size: 2rem;
-  
+
   margin-bottom: 0px;
 }
-.description h3{
+.description h3 {
   font-size: 1.5rem;
   margin-top: 0;
 }
-.description h4{
+.description h4 {
   font-size: 1.2rem;
   margin-top: 0;
 }
-.description h5{
+.description h5 {
   font-size: 1rem;
   margin-top: 0;
 }
-.description p{
+.description p {
   font-size: 1rem;
   margin-top: 0;
 }
-.description button{
+.description button {
   width: 100%;
   height: 50px;
-  
+
   background-color: #088178;
   color: white;
   border: none;
   cursor: pointer;
   margin-top: 10px;
 }
-.description button:hover{
+.description button:hover {
   background-color: #066c5e;
 }
-.description .fa{
+.description .fa {
   color: #088178;
   font-size: 1.5rem;
   margin-right: 10px;
 }
-.description .fa:hover{
+.description .fa:hover {
   color: #066c5e;
 }
-.select-group{
+.select-group {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -667,7 +665,7 @@ body {
   text-decoration: line-through;
   color: red;
 }
-.price h3{
+.price h3 {
   display: inline;
 }
 .select-group select::-ms-value {
@@ -678,44 +676,50 @@ body {
 .select-group select option {
   color: #333;
 }
-.description span{
+.description span {
   margin-right: 10px;
   margin-top: 5px;
-
 }
-.select-group{
+.select-group {
   display: flex;
   flex-direction: row;
   column-gap: 2px;
 }
 @media screen and (max-width: 800px) {
-  #prodetails{
+  #prodetails {
     flex-direction: column;
     width: 100%;
     height: auto;
-      padding: 0px;
+    padding: 0px;
   }
-  .description{
+  .description {
     width: 100%;
   }
-  .description p, .description h1, .description h2, .description h3, .description h4, .description h5, .description h6,.description span{
+  .description p,
+  .description h1,
+  .description h2,
+  .description h3,
+  .description h4,
+  .description h5,
+  .description h6,
+  .description span {
     font-size: 1rem;
     margin: 5px;
   }
-  .img-section>img {
+  .img-section > img {
     width: 100vw;
     height: 400px;
     object-fit: cover;
 
     margin: 0px;
-      padding: 0px;
+    padding: 0px;
   }
-  .small-images{
+  .small-images {
     width: 100vw;
     margin: 0px;
-      padding: 0px;
+    padding: 0px;
   }
-  .small-images img{
+  .small-images img {
     width: 25%;
     height: 100%;
     object-fit: cover;
@@ -783,7 +787,7 @@ body {
 
 /* slider section */
 
-body{
+body {
   overflow-x: hidden;
 }
 .slider h3 {
@@ -916,11 +920,6 @@ footer .copyright {
   color: red !important;
 }
 
-
-
-
-
-
 #cart {
   position: fixed;
   top: 0;
@@ -937,14 +936,13 @@ footer .copyright {
   overflow-x: hidden;
   padding-bottom: 10px;
   border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
-#cart button{
+#cart button {
   background-color: #088178;
   color: white;
-  
+
   cursor: pointer;
   margin-left: 20%;
 }
@@ -953,7 +951,6 @@ footer .copyright {
   transform: translateX(0%);
 }
 #clear-cart {
-  
   margin: 0;
   padding: 5px;
   background-color: #f79831;
@@ -981,26 +978,26 @@ footer .copyright {
     padding: 0px;
     overflow-x: hidden;
   }
-  #cart button{
+  #cart button {
     margin: 0;
     padding: 0;
   }
-    #clear-cart {
-      width: 100%;
-      margin: 0;
-      padding: 5px;
-      background-color: #f79831;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-  
-    #clear-cart:hover {
-      background-color: #f56a00;
-    }
+  #clear-cart {
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    background-color: #f79831;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #clear-cart:hover {
+    background-color: #f56a00;
+  }
   #cart.cart-visible {
     transform: translateX(0%);
   }
@@ -1018,7 +1015,7 @@ footer .copyright {
   object-fit: cover;
   margin-right: 10px;
 }
-.cart-row{
+.cart-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1030,7 +1027,7 @@ footer .copyright {
   font-size: 1.2rem;
   padding: 2px;
 }
-.cart-item h4{
+.cart-item h4 {
   padding: 0px;
   margin: 0px;
 }
@@ -1054,9 +1051,9 @@ footer .copyright {
   cursor: pointer;
 }
 
-
 /* products */
-.products-container, .search-results {
+.products-container,
+.search-results {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1117,7 +1114,7 @@ footer .copyright {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
@@ -1128,7 +1125,7 @@ footer .copyright {
   display: none;
   position: fixed;
   bottom: 0;
-  background-color: #EDEDED;
+  background-color: #ededed;
   overflow-y: scroll;
   border-radius: 10px 10px 0 0;
   border: 1px solid #ccc;
