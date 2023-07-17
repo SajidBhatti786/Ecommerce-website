@@ -1182,6 +1182,9 @@ footer .copyright {
     width: 100%;
     margin-left: 0;
   }
+  #search-area {
+    top: 100%;
+  }
 }
 .close-button {
   position: absolute;
