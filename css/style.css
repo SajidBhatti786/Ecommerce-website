@@ -57,16 +57,13 @@ body {
 
 .main__nav {
   display: flex;
-  position: sticky;
-
   color: white;
   background-color: white;
   color: #555555;
 
   height: 40px;
-  padding-top: 5px;
-  /* justify-content: center; */
-  align-items: center;
+  padding-top: 25px;
+
   padding-right: 5px;
   /* width:100%; */
 }
@@ -1180,17 +1177,12 @@ footer .copyright {
   .search-input {
     width: 100%;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .search-button {
     width: 100%;
     margin-left: 0;
   }
-}
-@media screen and (max-width: 500px) {
   #search-area {
     position: fixed;
     top: 0;
@@ -1207,9 +1199,9 @@ footer .copyright {
     z-index: 99;
     overflow-x: hidden;
     padding-bottom: 10px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
   }
 }
 .close-button {

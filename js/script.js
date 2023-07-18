@@ -256,8 +256,6 @@ function saveCartItems() {
 
 /* Searchbar */
 
-
-
 const searchArea = document.getElementById("search-area");
 const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
@@ -268,9 +266,7 @@ searchButton.addEventListener("click", function() {
   searchProducts(query);
 });
 
-function searchProducts(query) 
-{
-flag = false;
+function searchProducts(query) {
   fetch("https://dummyjson.com/products/search?q=" + query)
     .then(response => response.json())
     .then(data => {
@@ -278,61 +274,67 @@ flag = false;
 
       if (isObjectWithData(data)) {
         searchArea.style.height = "100vh";
-        
+
         Object.values(data).forEach(product1 => {
-          Object.values(product1).forEach(product => { 
-            console.log("p:"+product)
-          var html = `<div class="product" onclick="redirectToProductDetails(%productId%)" data-aos="fade-up" data-aos-duration="1500">
-      <img src="%src%" alt="Product 1">
-      <div class="product-info">
-        <h3 class="product-brand">%category%</h3>
-        <h2 class="product-name">%title%</h2>
-        <p class="product-description">%description%</p>
-        <div class="product-price">
-          <span class="discount-percentage">%discount%% OFF</span>
-          <span class="price-old">$%price%</span>
-          <span class="price-new">$%newPrice%</span>
-        </div>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-    </div>`
-        newHtml = html.replace('%src%', product.images[0]);
-        newHtml = newHtml.replace('%productId%',product.id);
-          newHtml =  newHtml.replace('%category%',product.category);
-          newHtml = newHtml.replace('%brand%', product.brand);
-          newHtml = newHtml.replace('%title%',product.title);
-        newHtml = newHtml.replace('%price%', product.price);
-        newHtml = newHtml.replace('%discount%', product.discountPercentage);
-        newHtml = newHtml.replace('%product%', product.id);
-        newHtml = newHtml.replace('%newPrice%', product.price - (product.price * product.discountPercentage / 100));
-          newHtml = newHtml.replace('%description%', product.description);
-            searchResults.insertAdjacentHTML('beforeend', newHtml);
-            flags = true;
-          })
+          Object.values(product1).forEach(product => {
+            var html = `<div class="product" onclick="redirectToProductDetails(%productId%)" >
+              <img src="%src%" alt="Product 1">
+              <div class="product-info">
+                <h3 class="product-brand">%category%</h3>
+                <h2 class="product-name">%title%</h2>
+                <p class="product-description">%description%</p>
+                <div class="product-price">
+                  <span class="discount-percentage">%discount%% OFF</span>
+                  <span class="price-old">$%price%</span>
+                  <span class="price-new">$%newPrice%</span>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>`;
+
+            newHtml = html.replace("%src%", product.images[0]);
+            newHtml = newHtml.replace("%productId%", product.id);
+            newHtml = newHtml.replace("%category%", product.category);
+            newHtml = newHtml.replace("%brand%", product.brand);
+            newHtml = newHtml.replace("%title%", product.title);
+            newHtml = newHtml.replace("%price%", product.price);
+            newHtml = newHtml.replace("%discount%", product.discountPercentage);
+            newHtml = newHtml.replace(
+              "%newPrice%",
+              product.price - (product.price * product.discountPercentage) / 100
+            );
+            newHtml = newHtml.replace("%description%", product.description);
+            searchResults.insertAdjacentHTML("beforeend", newHtml);
+          });
         });
-      } 
-      if (flag) {
-        console.log("in if");
-            searchResults.insertAdjacentHTML('beforeend', "<p>No results found.</p>");
+      } else {
+        searchResults.insertAdjacentHTML(
+          "beforeend",
+          "<p>No results found.</p>"
+        );
       }
     })
     .catch(error => {
       console.error("Error:", error);
-      searchResults.innerHTML = "<p>An error occurred while fetching the search results.</p>";
+      searchResults.innerHTML =
+        "<p>An error occurred while fetching the search results.</p>";
     });
 }
 
 function isObjectWithData(obj) {
   return typeof obj === "object" && obj !== null && Object.keys(obj).length > 0;
 }
+
 function hideSearchBar() {
   const searchArea = document.getElementById("search-area");
   searchArea.style.display = "none";
 }
+
 function showSearchBar() {
   const searchArea = document.getElementById("search-area");
   searchArea.style.display = "block";
 }
+
 
 function toggleCart() {
   var cart = document.getElementById("cart");
