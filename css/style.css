@@ -22,6 +22,8 @@ body {
   position: relative;
   height: 40px;
   background-color: black;
+  justify-content: center;
+  /* align-items: center; */
   color: white;
   align-items: center;
   justify-content: center;
@@ -56,13 +58,15 @@ body {
 .main__nav {
   display: flex;
   position: sticky;
+
   color: white;
   background-color: white;
   color: #555555;
 
   height: 40px;
-  padding-top: 25px;
-
+  padding-top: 5px;
+  /* justify-content: center; */
+  align-items: center;
   padding-right: 5px;
   /* width:100%; */
 }
@@ -1120,18 +1124,23 @@ footer .copyright {
   cursor: pointer;
 }
 #search-area {
-  width: 100%;
-  height: 50vh;
-  display: none;
   position: fixed;
+  top: 0;
+  right: 0;
   bottom: 0;
-  background-color: #ededed;
-  overflow-y: scroll;
-  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100%; /* Adjust the width as needed */
+  max-height: 100vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  z-index: 99;
+  overflow-x: hidden;
+  padding-bottom: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  z-index: 99999999999999999999;
+  transition: transform 0.3s ease-in-out;
 }
 
 .search-row {
