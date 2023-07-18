@@ -74,8 +74,16 @@ body {
 
   padding-right: 5px;
   /* width:100%; */
+  transition: position 0.5s ease-in-out;
 }
-
+.show-nav {
+  position: sticky !important;
+  top: 0 !important;
+  margin-bottom: 30px;
+  z-index: 99999;
+  height: 60px;
+  background-color: white;
+}
 .main__nav a {
   text-decoration: none;
   text-transform: uppercase;
@@ -137,7 +145,7 @@ body {
 
 /* mobile nav */
 .mobile__nav {
-  position: absolute;
+  position: fixed;
 
   display: flex;
   /* display: none; */
@@ -952,7 +960,7 @@ footer .copyright {
   max-height: 100vh;
   overflow-y: auto;
   background-color: #ffffff;
-  z-index: 99;
+  z-index: 99999999;
   overflow-x: hidden;
   padding-bottom: 10px;
   border: 1px solid #ccc;
