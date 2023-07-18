@@ -69,7 +69,7 @@ function showProductData() {
         showError('Invalid data format');
       }
       if (!found) {
-        let newHtml = '<h1>Data no found!!</h1>'
+        let newHtml = '<h1>Data not found!!</h1>'
         contentElement.insertAdjacentHTML('beforeend', newHtml);
       }
     }
