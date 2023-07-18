@@ -65,25 +65,21 @@ body {
 .main__nav {
   display: flex;
   color: white;
+  position: sticky;
+  top: 0;
   background-color: white;
   color: #555555;
   align-items: baseline;
 
-  height: 40px;
+  height: 50px;
   /* padding-top: 25px; */
 
   padding-right: 5px;
   /* width:100%; */
   transition: position 0.5s ease-in-out;
-}
-.show-nav {
-  position: sticky !important;
-  top: 0 !important;
-  margin-bottom: 30px;
   z-index: 99999;
-  height: 60px;
-  background-color: white;
 }
+
 .main__nav a {
   text-decoration: none;
   text-transform: uppercase;
@@ -110,7 +106,9 @@ body {
 }
 .regular__logo img {
   width: 100px;
+  margin-top: 0.3rem;
   height: 40px;
+  object-fit: cover;
 }
 .super__letter {
   font-size: 2rem;

@@ -485,33 +485,3 @@ function Change(){
     document.querySelector('.mobile__nav').classList.remove('show__nav');
     document.querySelector('.body__move').classList.remove('abc');
   }
-function debounce(func, delay) {
-  let timer;
-  return function() {
-    clearTimeout(timer);
-    timer = setTimeout(func, delay);
-  };
-}
-
-let prevScrollPos = window.pageYOffset;
-let isScrollingUp = false;
-
-window.onscroll = debounce(function() {
-  const currentScrollPos = window.pageYOffset;
-
-  if (currentScrollPos < prevScrollPos) {
-    // Scrolling up
-    if (!isScrollingUp) {
-      document.querySelector('.main__nav').classList.add('show-nav');
-      isScrollingUp = true;
-    }
-  } else {
-    // Scrolling down
-    if (isScrollingUp) {
-      document.querySelector('.main__nav').classList.remove('show-nav');
-      isScrollingUp = false;
-    }
-  }
-
-  prevScrollPos = currentScrollPos;
-}, 200);
