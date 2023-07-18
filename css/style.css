@@ -1185,6 +1185,7 @@ footer .copyright {
   }
   #search-area {
     position: fixed;
+    display: none;
     top: 0;
     right: 0;
     bottom: 0;
