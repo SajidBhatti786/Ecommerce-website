@@ -327,12 +327,12 @@ function isObjectWithData(obj) {
 
 function hideSearchBar() {
   const searchArea = document.getElementById("search-area");
-  searchArea.style.display = "none";
+  searchArea.style.visibility = "hidden";
 }
 
 function showSearchBar() {
   const searchArea = document.getElementById("search-area");
-  searchArea.style.display = "block";
+  searchArea.style.visibility = "visible";
 }
 
 

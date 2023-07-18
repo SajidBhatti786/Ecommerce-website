@@ -1123,7 +1123,7 @@ footer .copyright {
 #search-area {
   width: 100%;
   height: 50vh;
-  display: none;
+  visibility: hidden;
   position: fixed;
   bottom: 0;
   background-color: #ededed;
@@ -1189,7 +1189,7 @@ footer .copyright {
     top: 0;
     right: 0;
     bottom: 0;
-
+    visibility: hidden;
     flex-direction: column;
     cursor: pointer;
     width: 100%; /* Adjust the width as needed */
