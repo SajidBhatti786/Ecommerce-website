@@ -277,34 +277,36 @@ function searchProducts(query) {
 
         Object.values(data).forEach(product1 => {
           Object.values(product1).forEach(product => {
-            var html = `<div class="product" onclick="redirectToProductDetails(%productId%)" >
-              <img src="%src%" alt="Product 1">
-              <div class="product-info">
-                <h3 class="product-brand">%category%</h3>
-                <h2 class="product-name">%title%</h2>
-                <p class="product-description">%description%</p>
-                <div class="product-price">
-                  <span class="discount-percentage">%discount%% OFF</span>
-                  <span class="price-old">$%price%</span>
-                  <span class="price-new">$%newPrice%</span>
-                </div>
-                <button class="add-to-cart">Add to Cart</button>
-              </div>
-            </div>`;
-
-            newHtml = html.replace("%src%", product.images[0]);
-            newHtml = newHtml.replace("%productId%", product.id);
-            newHtml = newHtml.replace("%category%", product.category);
-            newHtml = newHtml.replace("%brand%", product.brand);
-            newHtml = newHtml.replace("%title%", product.title);
-            newHtml = newHtml.replace("%price%", product.price);
-            newHtml = newHtml.replace("%discount%", product.discountPercentage);
-            newHtml = newHtml.replace(
-              "%newPrice%",
-              product.price - (product.price * product.discountPercentage) / 100
-            );
-            newHtml = newHtml.replace("%description%", product.description);
-            searchResults.insertAdjacentHTML("beforeend", newHtml);
+            var html = `<div class="product" >
+      <img src="%src%" alt="Product 1" onclick="redirectToProductDetails(%productId%)">
+      <div class="product-info">
+        <h3 class="product-brand" onclick="redirectToProductDetails(%productId1%)">%category%</h3>
+        <h2 class="product-name" onclick="redirectToProductDetails(%productId2%)">%title%</h2>
+        <p class="product-description" onclick="redirectToProductDetails(%productId3%)">%description%</p>
+        <div class="product-price" onclick="redirectToProductDetails(%productId4%)">
+          <span class="discount-percentage">%discount%% OFF</span>
+          <span class="price-old">$%price%</span>
+          <span class="price-new">$%newPrice%</span>
+        </div>
+        <button class="add-to-cart"  onclick="addToCart(%data.id%)"">Add to Cart</button>
+      </div>
+    </div>`
+        newHtml = html.replace('%src%', product.images[0]);
+        newHtml = newHtml.replace('%data.id%', product.id);
+        newHtml = newHtml.replace('%productId%', product.id);
+        newHtml = newHtml.replace('%productId1%', product.id);
+        newHtml = newHtml.replace('%productId2%', product.id);
+        newHtml = newHtml.replace('%productId3%', product.id);
+        newHtml = newHtml.replace('%productId4%', product.id);
+          newHtml =  newHtml.replace('%category%',product.category);
+          newHtml = newHtml.replace('%brand%', product.brand);
+          newHtml = newHtml.replace('%title%',product.title);
+        newHtml = newHtml.replace('%price%', product.price);
+        newHtml = newHtml.replace('%discount%', product.discountPercentage);
+        newHtml = newHtml.replace('%product%', product.id);
+        newHtml = newHtml.replace('%newPrice%', product.price - (product.price * product.discountPercentage / 100));
+          newHtml = newHtml.replace('%description%', product.description);
+             searchResults.insertAdjacentHTML('beforeend', newHtml);
           });
         });
       } else {
@@ -327,12 +329,12 @@ function isObjectWithData(obj) {
 
 function hideSearchBar() {
   const searchArea = document.getElementById("search-area");
-  searchArea.style.visibility = "hidden";
+  searchArea.style.display = "none";
 }
 
 function showSearchBar() {
   const searchArea = document.getElementById("search-area");
-  searchArea.style.visibility = "visible";
+  searchArea.style.display = "block";
 }
 
 
