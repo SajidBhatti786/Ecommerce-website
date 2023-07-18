@@ -1180,12 +1180,17 @@ footer .copyright {
   .search-input {
     width: 100%;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .search-button {
     width: 100%;
     margin-left: 0;
   }
+}
+@media screen and (max-width: 500px) {
   #search-area {
     position: fixed;
     top: 0;
@@ -1197,7 +1202,7 @@ footer .copyright {
     width: 100%; /* Adjust the width as needed */
     max-height: 100vh;
     overflow-y: auto;
-    background-color: #ffffff;
+    background-color: #ededed;
     z-index: 99;
     overflow-x: hidden;
     padding-bottom: 10px;
