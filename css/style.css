@@ -1186,10 +1186,8 @@ footer .copyright {
   #search-area {
     position: fixed;
     display: none;
-    top: 0;
-    right: 0;
+
     bottom: 0;
-    display: flex;
     flex-direction: column;
     cursor: pointer;
     width: 100%; /* Adjust the width as needed */
