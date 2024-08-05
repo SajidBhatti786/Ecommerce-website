@@ -98,14 +98,14 @@ body {
   margin-left: 45%;
   font-size: 1rem;
   left: 0;
-  height: 40px;
+  height: auto;
   width: auto;
   text-align: center;
 
   font-weight: bolder;
 }
 .regular__logo img {
-  width: 100px;
+  width: auto !important;
   margin-top: 0.3rem;
   height: 40px;
   object-fit: cover;
@@ -772,34 +772,44 @@ body {
   flex-wrap: wrap;
   margin: 5% 10% 0 10%;
 }
-.cat {
+.cat
+{
   width: 30%;
-  height: 230px;
+  height: 250px;
   margin: 1% 1% 1% 1%;
   display: flex;
   flex-direction: row;
   overflow: hidden;
-
+  
   /* border: 2px solid brown; */
 }
 
-.cat a img {
+.cat a img
+{
   width: 100%;
+  height: fit-content;
+  object-fit: contain;
 
   transition: 0.5s;
+  
 }
 
-.cat a img:hover {
+.cat a img:hover
+{
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 900px) {
-  .cat {
-    width: 48%;
-    margin: 1;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
+@media screen and (max-width: 900px)
+{
+ 
+ .cat
+ {
+  width: 48%;
+  margin:1;
+  padding:0;
+  box-sizing: border-box;
+ }
 }
 
 @media screen and (max-width: 500px) {
@@ -829,7 +839,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: rgb(247, 239, 239);
+  background-color: black;
+  color: white;
   font-size: 1rem;
 }
 footer .col {
@@ -837,6 +848,7 @@ footer .col {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+  color: white;
 }
 footer .logo {
   margin-bottom: 30px;
@@ -852,7 +864,7 @@ footer p {
 footer a {
   font-size: 15px;
   text-decoration: none;
-  color: #222;
+  color: white;
   margin-bottom: 10px;
 }
 footer .follow h4 {
@@ -862,7 +874,7 @@ footer .follow i {
   padding-right: 4px;
   margin-top: 0px;
   cursor: pointer;
-  color: #465b52;
+  color: white;
 }
 footer .install .row img {
   border: 1px solid #088178;
@@ -1139,7 +1151,7 @@ footer .copyright {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: black;
   color: white;
   border: none;
   cursor: pointer;

@@ -87,11 +87,10 @@ function showProductData() {
 let products = [];
 
 let data = localStorage.getItem("productData");
-fetch('https://dummyjson.com/products/search?q='+data)
-.then(res => res.json())
-.then(console.log);
+
+
   
-      fetch('https://dummyjson.com/products/search?q=' + data)
+fetch('https://dummyjson.com/products/category/'+data)
 .then(res => res.json())
 .then(data => {
   
